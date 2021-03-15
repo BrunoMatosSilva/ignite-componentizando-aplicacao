@@ -6,7 +6,22 @@ import "./styles/global.scss";
 
 import { Content } from "./components/Content";
 import { SideBar } from "./components/SideBar";
-import { GenreResponseProps, MovieProps } from "./interface/interfaces";
+
+export interface GenreResponseProps {
+  id: number;
+  name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
+  title: string;
+}
+
+export interface MovieProps {
+  Title: string;
+  Poster: string;
+  Ratings: Array<{
+    Source: string;
+    Value: string;
+  }>;
+  Runtime: string;
+}
 
 export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
@@ -46,9 +61,9 @@ export function App() {
         </span>
 
         <SideBar
-          genres={genres}
-          selectedGenreId={selectedGenreId}
-          setSelectedGenreId={setSelectedGenreId}
+          genres={genres} //variavel do nome do botão.
+          selectedGenreId={selectedGenreId} //variavel respondel para identificar o id do genero. 
+          setSelectedGenreId={setSelectedGenreId} //variavel alterada apos seleção do genero desejado.
         />
       </nav>
 
