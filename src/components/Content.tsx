@@ -1,11 +1,11 @@
 import { MovieCard } from "./MovieCard";
 import '../styles/content.scss';
 
-interface ContentProps {
+interface ContentProps { //Propriedade dos titulos de genero.
   selectedGenre: {
-    title: string;
+    title: string; //tipagem do titulo.
   },
-  movies: Array<{
+  movies: Array<{ // A lista completa dos filmes e suas tipagens.
     Title: string;
     Poster: string;
     Ratings: Array<{
@@ -16,7 +16,7 @@ interface ContentProps {
   }>
 }
 
-export function Content({ selectedGenre, movies }: ContentProps) {
+export function Content({ selectedGenre, movies }: ContentProps) { // pega a propriedade no interface.
   return (
     <div className="container">
       <header>

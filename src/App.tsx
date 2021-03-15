@@ -60,14 +60,14 @@ export function App() {
           Watch<p>Me</p>
         </span>
 
-        <SideBar
-          genres={genres} //variavel do nome do botão.
-          selectedGenreId={selectedGenreId} //variavel respondel para identificar o id do genero. 
-          setSelectedGenreId={setSelectedGenreId} //variavel alterada apos seleção do genero desejado.
+        <SideBar //todo o menu que gerencia o que vai aparecer o conteudo.
+          genres={genres}
+          selectedGenreId={selectedGenreId}
+          setSelectedGenreId={setSelectedGenreId}
         />
       </nav>
 
       <Content selectedGenre={selectedGenre} movies={movies} />
-    </div>
+    </div> //todo o conteudo que altera conforme o botão do genero desejado.
   );
 }
