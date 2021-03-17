@@ -53,19 +53,18 @@ export function App() {
       });
   }, [selectedGenreId]);
 
+  function handleClickButton(id: number) {
+    setSelectedGenreId(id);
+  }
+
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
-      <nav className="sidebar">
-        <span>
-          Watch<p>Me</p>
-        </span>
 
-        <SideBar //todo o menu que gerencia o que vai aparecer o conteudo.
-          genres={genres}
-          selectedGenreId={selectedGenreId}
-          setSelectedGenreId={setSelectedGenreId}
-        />
-      </nav>
+      <SideBar //todo o menu que gerencia o que vai aparecer o conteudo.
+        genres={genres}
+        selectedGenreId={selectedGenreId}
+        handleClickButton={handleClickButton}
+      />
 
       <Content selectedGenre={selectedGenre} movies={movies} />
     </div> //todo o conteudo que altera conforme o botão do genero desejado.
